@@ -1,0 +1,14 @@
+{{agentName | uppercase}}
+
+<h2>Agent Detail</h2>
+<div><span>Id: </span>{{agent.id}}</div>
+<div><span>name: </span>{{agent.name}}</div>
+<div><span>code: </span>{{agent.code}}</div>
+<div><span>email: </span>{{agent.email}}</div>
+
+<div>
+    <label>
+        name:
+        <input [(ngModel)]= "agent.name" placeholder="name" />
+    </label>
+</div>
