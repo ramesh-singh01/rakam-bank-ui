@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Agent} from '../agent';
+import {AGENTS} from '../mock-agents';
 
 @Component({
   selector: 'app-agents',
@@ -21,5 +22,7 @@ export class AgentsComponent implements OnInit {
     code: "PL70403",
     email: "abc@gmail.com"
   }
+
+  agents= AGENTS;
 
 }
