@@ -1,3 +1,4 @@
+
 <h2>Agents Details</h2>
 
 <table>
@@ -13,6 +14,24 @@
         <td>{{agent.name}}</td>
         <td>{{agent.code}}</td>
         <td>{{agent.email}}</td>
-        <td><button>Edit</button> <button>Delete</button></td>
+        <td><button (click)="editAgent(agent)">Edit</button> <button (click)="deleteAgent(agent)">Delete</button></td>
     </tr>
 </table>
+
+<table class="editTable" *ngIf="selectedAgent">
+
+    <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td><input [(ngModel)]="selectedAgent.name" placeholder="{{selectedAgent.name}}"/></td>
+        <td><input [(ngModel)]="selectedAgent.code" placeholder="{{selectedAgent.code}}"/></td>
+        <td><input [(ngModel)]="selectedAgent.email" placeholder="{{selectedAgent.email}}"/></td>
+        <td><button (click)="editAgent(agent)">Save</button> <button (click)="deleteAgent(agent)">Cancel</button></td>
+    </tr>
+    
+</table>
+

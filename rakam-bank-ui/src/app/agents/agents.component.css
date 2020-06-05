@@ -27,3 +27,8 @@ tr:hover {
 tr:hover td {
   background-color: transparent;
 }
+
+.editTable{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}

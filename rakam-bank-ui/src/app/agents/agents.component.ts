@@ -14,15 +14,12 @@ export class AgentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  agentName= "Ramesh Singh";
-
-  agent: Agent= {
-    id: 1,
-    name: "Ramesh Singh",
-    code: "PL70403",
-    email: "abc@gmail.com"
-  }
-
   agents= AGENTS;
+
+  selectedAgent: Agent;
+
+  editAgent(agent: Agent): void {
+    this.selectedAgent= agent;
+  }
 
 }
