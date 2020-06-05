@@ -18,3 +18,12 @@ td {
   background: #FAFAFA; /* Lighter grey background */
   text-align: center; /* Center our text */
 }
+
+tr:hover {
+  color: black;
+  background-color: rgba(212, 238, 247, 0.856);
+}
+
+tr:hover td {
+  background-color: transparent;
+}
