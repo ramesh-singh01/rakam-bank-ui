@@ -22,4 +22,17 @@ export class AgentsComponent implements OnInit {
     this.selectedAgent= agent;
   }
 
+  cancelAgent(): void{
+    this.selectedAgent= null;
+  }
+
+  updateAgent(agent: Agent): void{
+    console.log("Call backend API method.");
+    
+  }
+
+  deleteAgent(agent: Agent): void{
+    console.log("Call backend API method.")
+  }
+
 }

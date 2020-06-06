@@ -30,7 +30,7 @@
         <td><input [(ngModel)]="selectedAgent.name" placeholder="{{selectedAgent.name}}"/></td>
         <td><input [(ngModel)]="selectedAgent.code" placeholder="{{selectedAgent.code}}"/></td>
         <td><input [(ngModel)]="selectedAgent.email" placeholder="{{selectedAgent.email}}"/></td>
-        <td><button (click)="editAgent(agent)">Save</button> <button (click)="deleteAgent(agent)">Cancel</button></td>
+        <td><button (click)="updateAgent(selectedAgent)">Save</button> <button (click)="cancelAgent()">Cancel</button></td>
     </tr>
     
 </table>
