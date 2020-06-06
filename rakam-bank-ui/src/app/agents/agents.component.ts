@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Agent} from '../agent';
-import {AGENTS} from '../mock-agents';
+import {AgentService} from '../agent.service';
 
 @Component({
   selector: 'app-agents',
@@ -9,12 +9,13 @@ import {AGENTS} from '../mock-agents';
 })
 export class AgentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
+    this.agents= this.agentService.getAgents();
   }
 
-  agents= AGENTS;
+  agents: Agent[];
 
   selectedAgent: Agent;
 
@@ -28,11 +29,14 @@ export class AgentsComponent implements OnInit {
 
   updateAgent(agent: Agent): void{
     console.log("Call backend API method.");
-    
   }
 
   deleteAgent(agent: Agent): void{
     console.log("Call backend API method.")
+  }
+
+  getAgents(): void{
+    this.agents= this.agentService.getAgents();
   }
 
 }
