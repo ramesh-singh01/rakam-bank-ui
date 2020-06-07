@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Agent} from '../agent';
 import {AgentService} from '../agent.service';
+import {MessageService} from '../message.service'
 
 @Component({
   selector: 'app-agents',
@@ -9,10 +10,11 @@ import {AgentService} from '../agent.service';
 })
 export class AgentsComponent implements OnInit {
 
-  constructor(private agentService: AgentService) { }
+  constructor(private agentService: AgentService,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.agents= this.agentService.getAgents();
+    this.getAgents();
   }
 
   agents: Agent[];
@@ -21,6 +23,7 @@ export class AgentsComponent implements OnInit {
 
   editAgent(agent: Agent): void {
     this.selectedAgent= agent;
+    this.messageService.add('AgentService: Selected agent id=${agent.id}');
   }
 
   cancelAgent(): void{
@@ -36,7 +39,8 @@ export class AgentsComponent implements OnInit {
   }
 
   getAgents(): void{
-    this.agents= this.agentService.getAgents();
+    this.agentService.getAgents()
+    .subscribe(agents =>this.agents= agents);
   }
 
 }
